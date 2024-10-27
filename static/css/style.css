@@ -1,0 +1,239 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+    border-radius: 12px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 0.8s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #ffffff; /* White text */
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Forms */
+.add-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #333333; /* Dark input background */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background-color: #444444; /* Slightly lighter input on focus */
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    padding: 15px;
+    background-color: #ffffff; /* White button background */
+    border: none;
+    color: black; /* Black text */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Light gray on hover */
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* General Button Styles */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 5;
+}
+
+/* Button for Delete Action */
+.btn.delete {
+    background-color: #e74c3c; /* Red for delete */
+    color: white;
+    text-decoration: none;
+}
+
+.btn.delete:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn.delete:active {
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Button for Toggle Complete/Undo Action */
+.btn.toggle {
+    background-color: #3498db; /* Blue for toggle */
+    color: white;
+    text-decoration: none;
+}
+
+.btn.toggle:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn.toggle:active {
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Icon Styling inside Buttons */
+.btn i {
+    margin-right: 8px;
+}
+
+/* Flash Messages */
+.flash-messages {
+    margin-bottom: 15px;
+    animation: fadeInDown 0.6s ease-in-out;
+}
+
+.flash {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flash.success {
+    background-color: #28a745; /* Green success */
+}
+
+.flash.error {
+    background-color: #dc3545; /* Red error */
+}
+
+.flash.info {
+    background-color: #007bff; /* Blue info */
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For mobile responsiveness, reduce padding and font size */
+@media screen and (max-width: 600px) {
+    .btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Task List */
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #1e1e1e; 
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    animation: fadeInUp 0.6s ease-in-out;
+    white-space: nowrap; 
+    overflow: hidden;   
+    text-overflow: ellipsis;
+    max-width: 900px;  
+    display: flexbox;
+}
+
+.todo-item:hover {
+    background-color: #333333; 
+    transform: scale(1.02);
+}
+
+.todo-item .task-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-item .task-title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.todo-item .task-desc {
+    font-size: 0.9em;
+}
+
+/* Completed tasks */
+.complete {
+    text-decoration: line-through;
+    color: #888888;
+}

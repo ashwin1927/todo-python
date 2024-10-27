@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form action="/add" method="post" class="add-form">
+        <input type="text" name="title" placeholder="Task Title" required>
+        <textarea style="resize: none; height:70px;" maxlength="70" name="description" placeholder="Task Description"></textarea>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul class="todo-list">
+        {% for task in tasks %}
+            <li class="todo-item {% if task.complete %}complete{% endif %}">
+                <span>
+                    <strong>{{ task.title }}</strong> - {{ task.description }}
+                </span>
+                <div class="actions">
+                    <a href="/update/{{ loop.index0 }}" class="btn toggle">
+                        {% if task.complete %}Undo{% else %}Complete{% endif %}
+                    </a>
+                    <a href="/delete/{{ loop.index0 }}" class="btn delete">Delete</a>
+                </div>
+            </li>
+        {% else %}
+            <li class="empty">No tasks yet!</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
