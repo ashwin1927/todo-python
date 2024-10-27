@@ -83,3 +83,5 @@ def delete_task(task_id):
             flash('Task deleted!', 'error')
     return redirect(url_for('index'))
 
+if __name__ == "__main__":
+    app.run()
